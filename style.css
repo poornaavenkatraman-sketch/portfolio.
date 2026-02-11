@@ -1,0 +1,327 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #00f7ff;
+}
+
+.logo {
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00f7ff;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.hero h2 span {
+  color: #00f7ff;
+  text-shadow: 0 0 15px #00f7ff;
+}
+
+.hero p {
+  margin: 20px 0 30px;
+  /* Increased bottom margin for buttons */
+  opacity: 0.85;
+  font-size: 1.1rem;
+  max-width: 500px;
+}
+
+
+/* Hero Image */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00f7ff;
+  box-shadow: 0 0 30px rgba(0, 247, 255, 0.4);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.skill-card {
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+}
+
+.python {
+  box-shadow: 0 0 25px #ffd43b;
+}
+
+.java {
+  box-shadow: 0 0 25px #ff5722;
+}
+
+.genai {
+  box-shadow: 0 0 25px #9c27b0;
+}
+
+/* PROJECTS */
+.project-card {
+  text-align: center;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 247, 255, 0.4);
+}
+
+.project-card h3 {
+  color: #00f7ff;
+  margin-bottom: 15px;
+}
+
+/* CONTACT */
+.contact-card {
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.social-links a {
+  color: #00f7ff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  text-shadow: 0 0 10px #00f7ff;
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    margin: 20px auto;
+  }
+}
+
+/* PRINT STYLES (ATS Friendly) */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+
+  .navbar,
+  footer {
+    display: none !important;
+  }
+
+  .section {
+    padding: 20px 0;
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000;
+    text-shadow: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  .logo {
+    color: #000;
+    text-shadow: none;
+    font-size: 24pt;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+  }
+
+  .card,
+  .skill-card {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .hero {
+    height: auto;
+    display: block;
+    padding: 20px 0;
+  }
+
+  .hero-container {
+    display: block;
+    text-align: left;
+  }
+
+  .hero-image {
+    display: none;
+    /* Usually better to hide photo for pure ATS text parsing, or keep it small */
+  }
+
+  .hero h2 span {
+    color: #000;
+    text-shadow: none;
+  }
+
+  .skills-grid {
+    display: block;
+  }
+
+  .skill-card {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
